@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auralia | Codex del Cambio — Matemáticas 9.º</title>
+<meta name="description" content="AVA de Matemáticas de grado 9.º: prerrequisitos, funciones, cambio, límites, derivada y optimización.">
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--navy:#14213d;--navy2:#243b64;--teal:#176b78;--cyan:#4aa9ad;--gold:#d4aa52;--cream:#f5f2ea;--paper:#fffdf8;--ink:#202a36;--muted:#687483;--line:#dce3e8;--ok:#39765a;--warn:#ad7427}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Segoe UI,Arial,sans-serif;line-height:1.62}
+a{color:var(--teal);font-weight:700}.top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;border-bottom:3px solid var(--gold)}
+.topin{max-width:1400px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:15px}.brand{font-weight:900}.brand b{color:var(--gold)}
+.layout{max-width:1400px;margin:auto;padding:22px;display:grid;grid-template-columns:275px 1fr;gap:22px}
+aside{position:sticky;top:68px;height:calc(100vh - 90px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 25px #14213d12}
+aside h3{color:var(--navy);margin:0 0 10px}aside a{display:block;text-decoration:none;padding:7px 9px;border-radius:8px;font-size:.9rem}aside a:hover{background:#edf5f5}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:20px;padding:38px;box-shadow:0 12px 30px #14213d1c}.hero h1{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;margin:8px 0}.kicker{color:#e1c77b;text-transform:uppercase;letter-spacing:2px;font-size:.8rem;font-weight:800}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:6px 11px;border:1px solid #ffffff30;background:#ffffff12;border-radius:99px}
+section{margin-top:28px}h2{color:var(--navy);border-left:7px solid var(--gold);padding-left:10px}h3{color:var(--teal)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:21px;margin:13px 0;box-shadow:0 5px 18px #14213d09}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.mini{background:#f0f6f6;border:1px solid #d7e8e8;border-radius:12px;padding:15px}.mini h3{margin-top:0}
+.formula{background:#101b30;color:#fff7dc;padding:16px;border-radius:11px;text-align:center;overflow:auto;margin:13px 0}
+.note{border-left:5px solid var(--teal);background:#edf7f7;padding:14px;border-radius:7px}.callout{border-left:5px solid var(--gold);background:#fff8e8;padding:14px;border-radius:7px}.warn{border-left:5px solid var(--warn);background:#fff5e7;padding:14px;border-radius:7px}
+table{width:100%;border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}th{background:#eaf0f4;color:var(--navy)}
+.resource{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;margin:8px 0;border:1px solid var(--line);border-radius:9px;background:#fff}.resource a{word-break:break-word}
+.game{border-left:5px solid var(--cyan)}.video{border-left:5px solid var(--gold)}
+.btn{display:inline-block;background:var(--teal);color:white;text-decoration:none;border:0;border-radius:8px;padding:8px 12px;font-weight:800}.btn.gold{background:var(--gold);color:#241b09}
+iframe{width:100%;height:430px;border:0;border-radius:12px;background:#eee}
+.badge{display:inline-block;background:#f7ecd3;color:#73551a;border-radius:99px;padding:4px 9px;font-weight:800}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:9px}.step{border:1px solid var(--line);border-radius:9px;padding:11px;background:#fafafa}.step b{display:block;color:var(--navy)}
+.progress{height:13px;background:#dfe5e8;border-radius:99px;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));transition:.3s}
+.check label{display:block;padding:5px}.small{font-size:.86rem;color:var(--muted)}
+.quiz{border:1px solid var(--line);border-radius:10px;padding:13px;margin:10px 0;background:#fff}.quiz label{display:block;padding:6px}.fb{display:none;padding:8px;border-radius:7px;margin-top:6px;font-weight:700}.ok{display:block;background:#e7f4ec;color:#245b40}.bad{display:block;background:#faeaea;color:#7a3030}
+footer{background:var(--navy);color:#eaf0f4;border-radius:16px;padding:25px;margin-top:30px}
+@media(max-width:900px){.layout{grid-template-columns:1fr;padding:12px}aside{position:static;height:auto}.hero{padding:26px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><div class="brand">🌌 AURALIA <b>| Codex del Cambio</b></div><div style="margin-left:auto">Matemáticas · 9.º</div></div></header>
+
+<div class="layout">
+<aside>
+<h3>Mapa de Auralia</h3>
+<a href="#inicio">Inicio</a>
+<a href="#prerrequisitos">Ruta de prerrequisitos</a>
+<a href="#variables">1. Variables y magnitudes</a>
+<a href="#numeros">2. Números y fracciones</a>
+<a href="#razones">3. Razones y proporciones</a>
+<a href="#funciones">4. Funciones y gráficas</a>
+<a href="#pendiente">5. Pendiente y cambio</a>
+<a href="#bloqueo" id="navLock">🔒 Bloques 6 a 12 (requieren código)</a>
+<div id="navBloq" style="display:none">
+<a href="#limites">6. Límites</a>
+<a href="#razon-cambio">7. Razón de cambio</a>
+<a href="#derivada">8. Derivada</a>
+<a href="#monomios">9. Monomios</a>
+<a href="#polinomios">10. Polinomios</a>
+<a href="#combos">11. Producto y cociente</a>
+<a href="#optimizacion">12. Optimización</a>
+</div>
+<a href="#biblioteca">Biblioteca de recursos</a>
+<a href="#progreso">Progreso</a>
+</aside>
+
+<main id="inicio">
+<div class="hero">
+<div class="kicker">Ambiente Virtual de Aprendizaje</div>
+<h1>Auralia: la batalla por el Aura</h1>
+<p>Kiro 🐶 y Nexa 🐱 necesitan comprender cómo cambian las magnitudes de Auralia. El recorrido comienza con los conocimientos que sostienen el pensamiento variacional y avanza hacia límites, derivadas y optimización.</p>
+<div class="chips"><span class="chip">Representaciones múltiples</span><span class="chip">ABR</span><span class="chip">GeoGebra</span><span class="chip">Gamificación</span><span class="chip">Modelación</span></div>
+</div>
+
+<section id="prerrequisitos">
+<h2>Ruta lógica de aprendizaje</h2>
+<div class="card">
+<p>El Codex sigue esta cadena: <strong>magnitudes → números y fracciones → razones y proporciones → funciones → gráficas → pendiente → interpretación del cambio → límites → razón de cambio → derivada → reglas de derivación → optimización.</strong></p>
+<div class="note">La lógica es deliberada: antes de estudiar la derivada, el estudiante debe disponer de herramientas para describir cantidades, relaciones, funciones y cambios.</div>
+</div>
+<div class="grid">
+<div class="mini"><h3>Representa</h3><p>Verbal · tabular · gráfica · algebraica.</p></div>
+<div class="mini"><h3>Explora</h3><p>GeoGebra y simulaciones.</p></div>
+<div class="mini"><h3>Practica</h3><p>Juegos y ejercicios digitales.</p></div>
+<div class="mini"><h3>Demuestra</h3><p>Problemas, argumentos y productos.</p></div>
+</div>
+</section>
+
+<!-- VARIABLES -->
+<section id="variables">
+<h2>1. Variables y magnitudes</h2>
+<div class="card">
+<h3>La primera clave: ¿qué está cambiando?</h3>
+<p>Una <strong>magnitud</strong> es una cantidad que puede medirse. Una <strong>variable</strong> representa un valor que puede cambiar dentro de una situación. En Auralia, por ejemplo, podemos estudiar el tiempo \(t\), la cantidad de Aura \(A\), la distancia \(d\) o el costo \(C\).</p>
+<table><tr><th>Situación</th><th>Variable independiente</th><th>Variable dependiente</th></tr>
+<tr><td>Aura obtenida durante una misión</td><td>Tiempo \(t\)</td><td>Aura \(A\)</td></tr>
+<tr><td>Distancia recorrida</td><td>Tiempo \(t\)</td><td>Distancia \(d\)</td></tr>
+<tr><td>Costo de objetos</td><td>Cantidad \(n\)</td><td>Costo \(C\)</td></tr></table>
+<div class="callout"><strong>Pregunta de Auralia:</strong> si \(A(t)\) representa Aura en función del tiempo, ¿qué significa que \(A\) dependa de \(t\)?</div>
+<h3>Video recomendado</h3>
+<div class="resource video"><span>📺 Búsqueda guiada en YouTube: variables y magnitudes — Profe Alex</span><a class="btn gold" href="https://www.youtube.com/results?search_query=Matematicas+profe+Alex+variables+y+magnitudes" target="_blank" rel="noopener">Ver resultados</a></div>
+<h3>Mini-reto</h3><p>Clasifica: edad de una persona, número de estudiantes, temperatura, tiempo, altura. ¿Cuál puede cambiar? ¿Cuál puede medirse?</p>
+</div>
+</section>
+
+<!-- NUMEROS -->
+<section id="numeros">
+<h2>2. Operaciones con números y fracciones</h2>
+<div class="card">
+<h3>Herramientas de cálculo para el viaje</h3>
+<p>Las fracciones aparecerán al calcular tasas, pendientes, razones de cambio y expresiones algebraicas. Por eso el objetivo no es memorizar reglas aisladas, sino operar con sentido y controlar signos, denominadores y equivalencias.</p>
+<div class="formula">\(\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}\qquad
+\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}\)</div>
+<table><tr><th>Operación</th><th>Idea de control</th></tr>
+<tr><td>Suma/resta</td><td>Usar denominador común y conservar el significado.</td></tr>
+<tr><td>Multiplicación</td><td>Multiplicar numeradores y denominadores; simplificar.</td></tr>
+<tr><td>División</td><td>Multiplicar por el recíproco del divisor.</td></tr>
+<tr><td>Signos</td><td>Controlar signo antes de simplificar.</td></tr></table>
+<h3>Video real</h3>
+<div class="resource video"><span>📺 Profe Alex — Operaciones básicas con fracciones</span><a class="btn gold" href="https://www.youtube.com/watch?v=-MwgrpO-iG8" target="_blank" rel="noopener">Ver video</a></div>
+<div class="resource video"><span>📺 Daniel Carreón — Tipos de fracciones y repaso</span><a class="btn gold" href="https://www.youtube.com/watch?v=7Xvlv3SCA4c" target="_blank" rel="noopener">Ver video</a></div>
+<h3>Juego en línea</h3>
+<div class="resource game"><span>🎮 Wordwall — colección pública de juegos de fracciones</span><a class="btn" href="https://wordwall.net/es-es/community/juego/fracciones" target="_blank" rel="noopener">Jugar</a></div>
+<div class="resource game"><span>🎮 Educaplay — fracciones, proporciones y geometría</span><a class="btn" href="https://www.educaplay.com/game/30478495-matematicas_fracciones_proporciones_y_geometria.html" target="_blank" rel="noopener">Jugar</a></div>
+</div>
+</section>
+
+<!-- RAZONES -->
+<section id="razones">
+<h2>3. Razones y proporciones</h2>
+<div class="card">
+<h3>Comparar cantidades antes de estudiar tasas</h3>
+<p>Una <strong>razón</strong> compara dos cantidades mediante un cociente. Una <strong>proporción</strong> establece una igualdad entre dos razones.</p>
+<div class="formula">\(\displaystyle a:b=\frac{a}{b}\qquad\text{y}\qquad\frac{a}{b}=\frac{c}{d}\)</div>
+<p>Ejemplo: si Kiro obtiene 30 unidades de Aura en 5 minutos, su tasa es \(30/5=6\) Aura/min. La razón se convierte en una herramienta para describir cambio.</p>
+<h3>Video real</h3>
+<div class="resource video"><span>📺 Profe Alex — Razones y proporciones | Introducción</span><a class="btn gold" href="https://www.youtube.com/watch?v=Jz-GPF9iHo8" target="_blank" rel="noopener">Ver video</a></div>
+<h3>Juegos en línea</h3>
+<div class="resource game"><span>🎮 Educaplay — Froggy Jumps: razones, fracciones y proporciones</span><a class="btn" href="https://www.educaplay.com/learning-resources/13257709-razones_fracciones_y_proporciones.html" target="_blank" rel="noopener">Jugar</a></div>
+<div class="resource game"><span>🎮 Educaplay — Juguemos con razones y proporciones</span><a class="btn" href="https://www.educaplay.com/learning-resources/16007691-razones_y_proporciones.html" target="_blank" rel="noopener">Jugar</a></div>
+<div class="resource game"><span>🎮 Wordwall — actividades públicas de proporcionalidad directa</span><a class="btn" href="https://wordwall.net/es-es/community/proporcionalidad-directa" target="_blank" rel="noopener">Explorar</a></div>
+</div>
+</section>
+
+<!-- FUNCIONES -->
+<section id="funciones">
+<h2>4. Funciones y gráficas</h2>
+<div class="card">
+<h3>Una regla que relaciona variables</h3>
+<p>Una función asigna a cada valor permitido de \(x\) un único valor de \(y\). En Auralia podemos escribir \(A(t)\): cantidad de Aura en función del tiempo.</p>
+<div class="formula">\(\displaystyle A(t)=4t\)</div>
+<table><tr><th>\(t\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><th>\(A(t)\)</th><td>0</td><td>4</td><td>8</td><td>12</td><td>16</td></tr></table>
+<p>La misma relación puede comunicarse con palabras, una tabla, una gráfica o una expresión algebraica.</p>
+<h3>Video recomendado</h3>
+<div class="resource video"><span>📺 Profe Alex — Funciones: conceptos y evaluación</span><a class="btn gold" href="https://www.youtube.com/results?search_query=Matematicas+profe+Alex+que+es+funcion+concepto+de+funcion" target="_blank" rel="noopener">Ver resultados</a></div>
+<div class="resource video"><span>📺 Profe Alex — Función compuesta | Introducción</span><a class="btn gold" href="https://www.youtube.com/watch?v=RIgzDV-AV_Q" target="_blank" rel="noopener">Ver video</a></div>
+<h3>Práctica estructurada</h3>
+<div class="resource game"><span>🎮 Khan Academy — Ecuaciones lineales y funciones</span><a class="btn" href="https://es.khanacademy.org/math/cc-eighth-grade-math/cc-8th-linear-equations-functions" target="_blank" rel="noopener">Practicar</a></div>
+<div class="note">La gráfica no es un adorno: debe permitir responder preguntas sobre crecimiento, decrecimiento, valores, cambios e intersecciones.</div>
+</div>
+</section>
+
+<!-- PENDIENTE -->
+<section id="pendiente">
+<h2>5. Pendiente e interpretación del cambio</h2>
+<div class="card">
+<h3>¿Cuánto cambia \(y\) cuando cambia \(x\)?</h3>
+<div class="formula">\(\displaystyle m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}\)</div>
+<p>La pendiente es una razón de cambio. Su interpretación depende de las unidades: si \(y\) es Aura y \(x\) es tiempo, \(m\) puede expresarse en Aura/minuto.</p>
+<table><tr><th>Pendiente</th><th>Interpretación</th></tr>
+<tr><td>\(m&gt;0\)</td><td>La variable dependiente aumenta cuando aumenta la independiente.</td></tr>
+<tr><td>\(m&lt;0\)</td><td>La variable dependiente disminuye cuando aumenta la independiente.</td></tr>
+<tr><td>\(m=0\)</td><td>No hay cambio neto en la variable dependiente.</td></tr></table>
+<h3>Recurso interactivo</h3>
+<p>Usa GeoGebra para experimentar con rectas y observar cómo cambia la pendiente.</p>
+<div class="resource"><span>🧪 GeoGebra — actividades sobre pendiente y rectas</span><a class="btn" href="https://www.geogebra.org/search?query=pendiente%20recta" target="_blank" rel="noopener">Explorar</a></div>
+<h3>Práctica real</h3>
+<div class="resource game"><span>🎮 Khan Academy — pendiente a partir de gráfica, tabla, puntos y ecuación</span><a class="btn" href="https://es.khanacademy.org/math/cc-eighth-grade-math/cc-8th-linear-equations-functions" target="_blank" rel="noopener">Practicar</a></div>
+<div class="resource game"><span>🎮 Wordwall — funciones, pendiente, ordenada, creciente/decreciente</span><a class="btn" href="https://wordwall.net/es-es/community/proporcionalidad-directa" target="_blank" rel="noopener">Explorar</a></div>
+<div class="warn"><strong>Puente conceptual:</strong> la pendiente de una recta es constante. Pero ¿qué sucede si la gráfica es curva y la pendiente cambia de un punto a otro? Esa pregunta prepara la entrada al límite y a la derivada.</div>
+</div>
+</section>
+
+<section id="bloqueo">
+<div class="card" id="lockCard" style="border-left:7px solid var(--gold)">
+<h2 style="border:0;padding:0;margin-top:0">🔒 Bloques 6 a 12</h2>
+<p>Los bloques de Límites, Razón de cambio, Derivada, Monomios, Polinomios, Producto y cociente, y Optimización se abren con el código que te entregue tu docente.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+<label for="codeIn" style="font-weight:700">Código:</label>
+<input id="codeIn" type="password" inputmode="numeric" autocomplete="off" maxlength="12" style="padding:9px 12px;border:1px solid var(--line);border-radius:8px;font-size:1rem;width:150px">
+<button class="btn gold" id="codeBtn" type="button" style="cursor:pointer">Desbloquear</button>
+</div>
+<div class="fb" id="codeFb" role="status" aria-live="polite"></div>
+</div>
+</section>
+<div id="bloqueados" style="display:none">
+<!-- LIMITES -->
+<section id="limites">
+<h2>6. El Portal de los Límites</h2>
+<div class="card">
+<p>El límite permite estudiar qué valor se aproxima una función cuando la variable independiente se acerca a un valor.</p>
+<div class="formula">\(\displaystyle \lim_{x\to2}(x+3)=5\)</div>
+<p>En expresiones más complejas puede ser necesario factorizar, simplificar o analizar aproximaciones laterales.</p>
+<div class="resource"><span>🧪 GeoGebra — búsqueda de actividades sobre límites</span><a class="btn" href="https://www.geogebra.org/search?query=limites" target="_blank" rel="noopener">Explorar</a></div>
+</div>
+</section>
+
+<!-- RAZON CAMBIO -->
+<section id="razon-cambio">
+<h2>7. La Batalla de Aura — razón de cambio</h2>
+<div class="card">
+<p>Kiro obtiene 20 Aura en 5 minutos y Nexa 15 Aura en 5 minutos. Comparamos no solo cantidades sino velocidades de cambio.</p>
+<div class="formula">\(\displaystyle \text{RC promedio}=\frac{f(b)-f(a)}{b-a}\)</div>
+<p>Para una función no lineal, la razón de cambio puede variar según el intervalo. Esto conduce naturalmente a una pregunta más profunda: <strong>¿cómo describir el cambio exactamente en un instante?</strong></p>
+</div>
+</section>
+
+<!-- DERIVADA -->
+<section id="derivada">
+<h2>8. El Sensor del Instante — derivada</h2>
+<div class="card">
+<p>La derivada se construye a partir de la razón de cambio promedio cuando el intervalo se hace cada vez más pequeño.</p>
+<div class="formula">\(\displaystyle f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}\)</div>
+<p>Para \(f(x)=x^2\):</p>
+<div class="formula">\(\displaystyle f'(x)=\lim_{h\to0}\frac{(x+h)^2-x^2}{h}=2x\)</div>
+<div class="resource"><span>🧪 GeoGebra — búsqueda de actividades sobre derivada</span><a class="btn" href="https://www.geogebra.org/search?query=derivada" target="_blank" rel="noopener">Explorar</a></div>
+</div>
+</section>
+
+<!-- MONOMIOS -->
+<section id="monomios">
+<h2>9. Código de los Monomios</h2>
+<div class="card">
+<div class="formula">\(\displaystyle \frac{d}{dx}(x^n)=nx^{n-1}\qquad\frac{d}{dx}(ax^n)=anx^{n-1}\)</div>
+<table><tr><th>Función</th><th>Derivada</th></tr><tr><td>\(5x^4\)</td><td>\(20x^3\)</td></tr><tr><td>\(7x^3\)</td><td>\(21x^2\)</td></tr><tr><td>\(-3x^5\)</td><td>\(-15x^4\)</td></tr></table>
+<div class="resource"><span>📚 Khan Academy — regla de potencias</span><a class="btn" href="https://es.khanacademy.org/math/differential-calculus/dc-diff-intro/dc-power-rule/v/power-rule" target="_blank" rel="noopener">Aprender</a></div>
+</div>
+</section>
+
+<!-- POLINOMIOS -->
+<section id="polinomios">
+<h2>10. Reconstrucción del Código — polinomios</h2>
+<div class="card">
+<div class="formula">\(\displaystyle f(x)=4x^3-5x^2+7x-2\Rightarrow f'(x)=12x^2-10x+7\)</div>
+<p>La derivada de una suma o diferencia se obtiene derivando término a término. El análisis debe incluir la interpretación del signo de \(f'(x)\) cuando se estudia crecimiento y decrecimiento.</p>
+<div class="resource"><span>📚 Khan Academy — diferenciación y reglas básicas</span><a class="btn" href="https://es.khanacademy.org/math/ap-calculus-bc/bc-differentiation-1-new" target="_blank" rel="noopener">Aprender</a></div>
+</div>
+</section>
+
+<!-- COMBOS -->
+<section id="combos">
+<h2>11. Combos de Aura — producto y cociente</h2>
+<div class="card">
+<h3>Producto</h3><div class="formula">\(\displaystyle (fg)'=f'g+fg'\)</div>
+<h3>Cociente</h3><div class="formula">\(\displaystyle \left(\frac fg\right)'=\frac{f'g-fg'}{g^2},\quad g\neq0\)</div>
+<p>Antes de derivar, identifica la estructura. En el cociente, además, revisa las restricciones de dominio.</p>
+</div>
+</section>
+
+<!-- OPTIMIZACION -->
+<section id="optimizacion">
+<h2>12. El Núcleo del Cambio — optimización</h2>
+<div class="card">
+<p>El reto final conecta modelación y derivación:</p>
+<div class="steps"><div class="step"><b>1. SITUACIÓN</b>Comprender.</div><div class="step"><b>2. VARIABLES</b>Definir.</div><div class="step"><b>3. MODELO</b>Construir \(f(x)\).</div><div class="step"><b>4. DERIVADA</b>Calcular \(f'(x)\).</div><div class="step"><b>5. CRÍTICO</b>Resolver \(f'(x)=0\).</div><div class="step"><b>6. DECISIÓN</b>Interpretar.</div></div>
+<h3>Ejemplo</h3>
+<div class="formula">\(\displaystyle A(x)=x(20-x)=20x-x^2\quad\Rightarrow\quad A'(x)=20-2x\)</div>
+<div class="formula">\(\displaystyle A'(x)=0\Rightarrow x=10\)</div>
+<p>La conclusión no es solo \(x=10\): hay que explicar qué representa ese valor y por qué corresponde al máximo dentro del contexto.</p>
+</div>
+</section>
+
+</div>
+
+<section id="biblioteca">
+<h2>Biblioteca consolidada</h2>
+<div class="card">
+<h3>Videos</h3>
+<div class="resource video"><span>Profe Alex — Razones y proporciones</span><a class="btn gold" href="https://www.youtube.com/watch?v=Jz-GPF9iHo8" target="_blank" rel="noopener">Abrir</a></div>
+<div class="resource video"><span>Profe Alex — Operaciones con fracciones</span><a class="btn gold" href="https://www.youtube.com/watch?v=-MwgrpO-iG8" target="_blank" rel="noopener">Abrir</a></div>
+<div class="resource video"><span>Daniel Carreón — Tipos de fracciones</span><a class="btn gold" href="https://www.youtube.com/watch?v=7Xvlv3SCA4c" target="_blank" rel="noopener">Abrir</a></div>
+<div class="resource video"><span>Profe Alex — Función compuesta | Introducción</span><a class="btn gold" href="https://www.youtube.com/watch?v=RIgzDV-AV_Q" target="_blank" rel="noopener">Abrir</a></div>
+<h3>Plataformas de práctica</h3>
+<div class="resource"><span>Khan Academy — Matemáticas</span><a class="btn" href="https://es.khanacademy.org/math" target="_blank" rel="noopener">Abrir</a></div>
+<div class="resource"><span>Khan Academy — Razones, tasas y proporciones</span><a class="btn" href="https://es.khanacademy.org/math/pre-algebra/pre-algebra-ratios-rates" target="_blank" rel="noopener">Abrir</a></div>
+<div class="resource"><span>Khan Academy — Ecuaciones lineales y funciones</span><a class="btn" href="https://es.khanacademy.org/math/cc-eighth-grade-math/cc-8th-linear-equations-functions" target="_blank" rel="noopener">Abrir</a></div>
+<div class="resource"><span>GeoGebra — buscador de recursos de matemáticas</span><a class="btn" href="https://www.geogebra.org/" target="_blank" rel="noopener">Abrir</a></div>
+</div>
+</section>
+
+<section id="progreso">
+<h2>Progreso del Guardián</h2>
+<div class="card">
+<p><strong id="pt">0 de 12 bloques completados</strong></p><div class="progress"><div class="bar" id="pb"></div></div>
+<div class="check" id="checks"></div>
+<p class="small">Marca un bloque solo cuando puedas demostrarlo con una actividad, explicación o evidencia.</p>
+</div>
+</section>
+
+<footer><h3>Principio del Codex</h3><p>Comprender → representar → explorar → resolver → interpretar → argumentar → aplicar.</p><p class="small" style="color:#cbd5df">Los enlaces externos apuntan a recursos reales de YouTube, Khan Academy, GeoGebra, Wordwall y Educaplay.</p></footer>
+</main></div>
+
+<script>
+const items=["Variables y magnitudes","Números y fracciones","Razones y proporciones","Funciones y gráficas","Pendiente e interpretación del cambio","Límites","Razón de cambio","Derivada","Derivadas de monomios","Derivadas de polinomios","Producto y cociente","Optimización"];
+const box=document.getElementById("checks");
+items.forEach((x,i)=>{const l=document.createElement("label");l.innerHTML=`<input type="checkbox" id="c${i}" onchange="save()"> ${i+1}. ${x}`;box.appendChild(l)});
+function save(){const a=items.map((_,i)=>document.getElementById("c"+i).checked);localStorage.setItem("auralia12",JSON.stringify(a));update()}
+function update(){let a=[];try{a=JSON.parse(localStorage.getItem("auralia12"))||[]}catch(e){}a.forEach((v,i)=>document.getElementById("c"+i).checked=!!v);const n=a.filter(Boolean).length;document.getElementById("pt").textContent=`${n} de 12 bloques completados`;document.getElementById("pb").style.width=(n/12*100)+"%"}
+update();
+
+const HASH=47865102;
+function hh(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return h}
+function unlock(){
+document.getElementById("bloqueados").style.display="block";
+document.getElementById("navBloq").style.display="block";
+document.getElementById("navLock").style.display="none";
+document.getElementById("lockCard").style.display="none";
+if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise();
+}
+function tryCode(){
+const v=document.getElementById("codeIn").value.trim(),fb=document.getElementById("codeFb");
+if(hh(v)===HASH){try{sessionStorage.setItem("auraliaOK","1")}catch(e){}unlock();location.hash="#limites"}
+else{fb.className="fb bad";fb.textContent="Código incorrecto. Revísalo e inténtalo de nuevo.";}
+}
+document.getElementById("codeBtn").onclick=tryCode;
+document.getElementById("codeIn").addEventListener("keydown",e=>{if(e.key==="Enter")tryCode()});
+try{if(sessionStorage.getItem("auraliaOK")==="1")unlock()}catch(e){}
+</script>
+</body>
+</html>
